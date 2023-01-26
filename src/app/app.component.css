@@ -1,0 +1,134 @@
+.body {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  align-items: center;
+  background-image: linear-gradient(to bottom, #0B1B2B 22%, #040F1A 20%);
+  padding: 0px;
+  overflow: hidden;
+  position: absolute;
+}
+.body .header {
+  width: 1366px;
+  height: 160px;
+  display: flex;
+  position: absolute;
+  border-top: 16px;
+  border-bottom-width: 0px;
+  left: 50px;
+  right: 0px;
+  top: 20px;
+  justify-content: space-between;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 160%;
+  color: #C4D4E3;
+}
+.body .header .logo {
+  margin-left: 0px;
+  width: 42px;
+  height: 29px;
+  letter-spacing: 1px;
+  display: flex;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.body .header .logo:hover {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  -webkit-text-decoration-color: #3294F8;
+          text-decoration-color: #3294F8;
+}
+.body .header .estoque {
+  margin-left: 1370px;
+  width: 68px;
+  height: 29px;
+  display: flex;
+  align-items: center;
+  text-align: right;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  cursor: pointer;
+  margin-top: 1px;
+  letter-spacing: 1px;
+}
+.body .header .estoque:hover {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  -webkit-text-decoration-color: #3294F8;
+          text-decoration-color: #3294F8;
+}
+.body .header .usuario {
+  margin-left: 60px;
+  width: 74px;
+  height: 29px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  display: flex;
+  align-items: center;
+  text-align: right;
+}
+.body .header .usuario:hover {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  -webkit-text-decoration-color: #3294F8;
+          text-decoration-color: #3294F8;
+}
+.body .header .containerAvatar {
+  margin-left: 60px;
+  margin-right: 110px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  margin-top: -8px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+  background: #3A536B;
+  border-radius: 100px;
+  cursor: pointer;
+}
+.body .header .containerAvatar:hover {
+  background: #7B96B2;
+}
+.body .header .containerAvatar .avatar {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 100%;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  color: #E7EDF4;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin-left: 64%;
+  margin-top: 39%;
+}
+.body .header a {
+  color: inherit;
+  text-decoration: none;
+}
+.body .header a:hover {
+  text-underline-position: under;
+  -webkit-text-decoration-color: #3294F8;
+          text-decoration-color: #3294F8;
+}
+
+mat-progress-bar {
+  position: absolute;
+  top: 50%;
+  width: 400px;
+}/*# sourceMappingURL=app.component.css.map */

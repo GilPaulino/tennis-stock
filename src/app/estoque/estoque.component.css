@@ -1,0 +1,323 @@
+.container {
+  width: 1094px;
+  height: 587px;
+  display: flex;
+  left: 20.9%;
+  position: absolute;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  top: 15.5%;
+}
+
+.containerEstoque {
+  display: block;
+  margin-top: -72px;
+  position: relative;
+}
+.containerEstoque .barraPesquisa {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  position: relative;
+  gap: 4px;
+  width: 1096px;
+  height: 57px;
+  background: #040F1A;
+  border-radius: 4px;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  margin-top: -60px;
+  margin-left: 25px;
+}
+.containerEstoque .barraPesquisa input {
+  position: relative;
+  width: 1072px;
+  height: 26px;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 160%;
+  color: #E7EDF4;
+  flex: none;
+  background: #040F1A;
+  border: 1px #1C2F41;
+  order: 0;
+  flex-grow: 1;
+}
+.containerEstoque .barraPesquisa input::-moz-placeholder {
+  color: #3A536B;
+}
+.containerEstoque .barraPesquisa input:-ms-input-placeholder {
+  color: #3A536B;
+}
+.containerEstoque .barraPesquisa input::placeholder {
+  color: #3A536B;
+}
+.containerEstoque .barraPesquisa input:focus {
+  outline: none;
+}
+.containerEstoque .cadastrar {
+  display: flex;
+  width: 180px;
+  height: 22px;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 160%;
+  text-transform: uppercase;
+  color: #3294F8;
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+  white-space: nowrap;
+  letter-spacing: 1px;
+  margin-top: 20px;
+  margin-left: 928px;
+  cursor: pointer;
+  transition: 300ms;
+}
+.containerEstoque .cadastrar:hover {
+  text-decoration: underline;
+  color: #4EA8DE;
+}
+.containerEstoque .cadastrar a {
+  color: inherit;
+  text-decoration: none;
+}
+.containerEstoque .cadastrar a:hover {
+  text-underline-position: under;
+  -webkit-text-decoration-color: #3294F8;
+          text-decoration-color: #3294F8;
+}
+.containerEstoque .h3Produtos {
+  width: 80px;
+  height: 29px;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 160%;
+  display: flex;
+  align-items: center;
+  color: #C4D4E3;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  white-space: nowrap;
+  margin-left: 26.4px;
+}
+.containerEstoque .resultadoNome {
+  width: 140px;
+  height: 22px;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 160%;
+  display: flex;
+  align-items: center;
+  color: #AFC2D4;
+  white-space: nowrap;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  margin-left: 115px;
+  margin-top: -40px;
+}
+.containerEstoque .quantidade {
+  width: 69px;
+  height: 22px;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 160%;
+  display: flex;
+  align-items: center;
+  text-align: right;
+  color: #AFC2D4;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  white-space: nowrap;
+  margin-left: 1044px;
+  margin-top: -32px;
+}
+.containerEstoque .listaResultado {
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  width: 1150px;
+  height: 450px;
+  margin-bottom: -220px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.containerEstoque .listaResultado::-webkit-scrollbar {
+  background-color: #1C2F41;
+  width: 12px;
+  border-radius: 10px;
+}
+.containerEstoque .listaResultado::-webkit-scrollbar-thumb {
+  background: #112131;
+  border-radius: 10px;
+}
+.containerEstoque .listaResultado .resultado {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 16px 32px;
+  gap: 48px;
+  margin-bottom: 15px;
+  position: relative;
+  width: 1036px;
+  height: 132px;
+  left: 25px;
+  top: 22px;
+  background: #112131;
+  border-radius: 16px;
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+  transition-duration: 0.5s;
+}
+.containerEstoque .listaResultado .resultado:hover {
+  background: #1C2F41;
+}
+.containerEstoque .listaResultado .resultado:hover .containerTituloDescricaPreco {
+  position: relative;
+  width: 800px;
+}
+.containerEstoque .listaResultado .resultado:hover .containerTituloDescricaPreco .descricaoTenis {
+  width: 780px;
+  position: relative;
+}
+.containerEstoque .listaResultado .resultado:hover .editorLixeira {
+  display: flex;
+}
+.containerEstoque .listaResultado .resultado .imagemTenis {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  top: 20%;
+  left: -0.9%;
+  justify-content: content;
+  align-items: center;
+  text-align: center;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  cursor: pointer;
+}
+.containerEstoque .listaResultado .resultado .imagemTenis img {
+  width: 125px;
+  position: relative;
+  left: 0%;
+  top: -44%;
+}
+.containerEstoque .listaResultado .resultado .containerTituloDescricaPreco {
+  display: block;
+  width: 900px;
+  height: 150px;
+  position: relative;
+}
+.containerEstoque .listaResultado .resultado .containerTituloDescricaPreco .titulo {
+  width: 100px;
+  height: 32px;
+  font-family: "Nunito";
+  font-style: normal;
+  position: relative;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 160%;
+  display: flex;
+  top: 2%;
+  left: 0.5%;
+  align-items: flex-end;
+  color: #E7EDF4;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.containerEstoque .listaResultado .resultado .containerTituloDescricaPreco .titulo:hover {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+.containerEstoque .listaResultado .resultado .containerTituloDescricaPreco .titulo a {
+  color: inherit;
+  text-decoration: none;
+}
+.containerEstoque .listaResultado .resultado .containerTituloDescricaPreco .titulo a:hover {
+  text-underline-position: under;
+  -webkit-text-decoration-color: inherit;
+          text-decoration-color: inherit;
+}
+.containerEstoque .listaResultado .resultado .containerTituloDescricaPreco .valor {
+  width: 100px;
+  height: 18px;
+  position: relative;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 130%;
+  display: flex;
+  padding: 0;
+  top: -24%;
+  left: 89%;
+  align-items: center;
+  text-align: right;
+  color: #8284FA;
+  flex: none;
+  order: 1;
+  flex-grow: 1;
+}
+.containerEstoque .listaResultado .resultado .containerTituloDescricaPreco .descricaoTenis {
+  position: relative;
+  top: -25%;
+  left: 0.5%;
+  width: 850px;
+  height: 100px;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 160%;
+  color: #AFC2D4;
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 1;
+}
+.containerEstoque .listaResultado .resultado .editorLixeira {
+  display: none;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  align-items: center;
+  text-align: center;
+  width: 90px;
+  height: 100px;
+  margin-bottom: -2.2%;
+  margin-left: -3%;
+  flex: none;
+  flex-grow: 0;
+  flex: none;
+  order: 1;
+}
+.containerEstoque .listaResultado .resultado .editorLixeira .fa-solid {
+  position: relative;
+  left: -14%;
+  top: -11%;
+  margin: 10px;
+  color: #E7EDF4;
+  cursor: pointer;
+}/*# sourceMappingURL=estoque.component.css.map */

@@ -1,0 +1,38 @@
+<main>
+
+
+    <div mat-dialog-content>       
+
+        <div class="containerVisualizador" *ngIf="publicacoes">
+
+        <div mat-dialog-actions class="containerBotao">
+            <button mat-button (click)="fecharDialog()"><i class="fa-solid fa-less-than"></i> Voltar </button>
+        </div>
+
+            <div class="containerEfeitoImagem"></div>
+
+            <div class="imagem">
+                <img src="{{publicacoes.imageBase64}}" alt="Modelo Do tênis">                
+            </div>
+
+            <h1> {{publicacoes.title}} </h1>
+
+            <div class="avaliacao">
+                <p class="estrelaUm"><img src="assets/img/star-yellow.png" alt="Estrela"></p>
+                <p class="estrelaDois"><img src="assets/img/star-yellow.png" alt="Estrela"></p>
+                <p class="estrelaTres"><img src="assets/img/star-yellow.png" alt="Estrela"></p>
+                <p class="estrelaQuatro"><img src="assets/img/star-yellow.png" alt="Estrela"></p>
+                <p class="estrelaCinco"> <img src="assets/img/star-gray.png" alt=""></p>
+                
+                <p class="pontos">4.3</p>
+            </div>
+
+            <h2> {{publicacoes.price}}</h2>
+
+            <p class="descricao"> {{publicacoes.description}} </p>
+
+        </div>
+
+    </div>
+
+</main>
