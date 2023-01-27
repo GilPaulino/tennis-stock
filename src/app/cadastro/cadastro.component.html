@@ -1,9 +1,8 @@
-
 <main>
-<h1 mat-dialog-title class="cabecalho"> Cadastrar Produto </h1>
-<h1 class="fechar" (click)="fecharDialog()" > X </h1>
+    <h1 mat-dialog-title class="cabecalho"> Cadastrar Produto </h1>
+    <h1 class="fechar" (click)="fecharDialog()"> X </h1>
 
-<div mat-dialog-content >    
+    <div mat-dialog-content>
 
         <form (ngSubmit)="postar()">
 
@@ -23,28 +22,30 @@
                             <img class="seta" src="assets/img/enviaQuatro.svg" alt="Icone de Envio">
                         </div>
 
-                        <h6 class="arraste">Arraste e solte um arquivo aqui ou <h6 class="escolha"> Escolha Arquivo </h6>
+                        <h6 class="arraste">Arraste e solte um arquivo aqui ou <h6 class="escolha"> Escolha Arquivo
+                            </h6>
                         </h6>
                         <p>Formatos Suportados: JPEG, PNG</p>
 
 
                     </div>
 
-                    <input type="file" accept="image/*" name="imageBase64" (change)="mudancaFormatoImg($event)" tabindex="0" id="inputFile">
+                    <input type="file" accept="image/*" name="imageBase64" (change)="mudancaFormatoImg($event)"
+                        tabindex="0" id="inputFile">
 
-                    <div class="posEnvio" *ngIf="publicacoes.imageBase64" >
-                        <span class="imagemCarregada" >
+                    <div class="posEnvio" *ngIf="publicacoes.imageBase64">
+                        <span class="imagemCarregada">
                             <img src="{{publicacoes.imageBase64}}" alt="">
                         </span>
 
-                        <div class="lixeira" >
+                        <div class="lixeira">
                             <i class="fa-solid fa-trash-can" (click)="limparImagem()"></i>
                         </div>
 
                         <p> {{nomeArquivo}} </p>
-                        
+
                     </div>
-                    <div class="barraProgresso"  >
+                    <div class="barraProgresso">
                         <mat-progress-bar value="86"></mat-progress-bar>
 
                     </div>
@@ -91,6 +92,6 @@
             <button type="submit" mat-button> <i class="fa-regular fa-floppy-disk"></i> Salvar</button>
 
         </form>
-    
-</div>
+
+    </div>
 </main>

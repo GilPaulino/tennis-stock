@@ -1,11 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ActivatedRoute, Router } from '@angular/router';
 import { Publicacao } from '../models/publicacao.model';
 import { PublicacaoService } from '../services/publicacao.service';
 import { CadastroComponent } from '../cadastro/cadastro.component'
 import { DetalhadaComponent } from '../detalhada/detalhada.component';
-
 
 @Component({
   selector: 'app-estoque',
@@ -16,104 +14,80 @@ export class EstoqueComponent implements OnInit {
 
   publicacoes: any[] = [];
   publicacoesFiltrado: any[] = [];
-  public busca: string = '';
-  id: string | null;
-  publicacaoComId: string = '';
+  public buscarNome: string = '';
+  id: string = '';
+
   constructor(
     public dialog: MatDialog,
-    private service: PublicacaoService,
-    private router: Router,
-    route: ActivatedRoute) { 
-      this.id = route.snapshot.paramMap.get('id');
-    }
+    private service: PublicacaoService,) {
+  }
 
   ngOnInit(): void {
     this.exibirTodasPublicacoes();
   }
 
-  
-
   cadastrarProduto(): void {
-    const dialogRef = this.dialog.open(CadastroComponent, {
-      
-    });
+    const dialogRef = this.dialog.open(CadastroComponent, {});
 
     dialogRef.afterClosed().subscribe(result => {
-      
-      this.exibirTodasPublicacoes();    
+      this.exibirTodasPublicacoes();
     });
   }
 
-  mostrarDetalhes(): void {
-    const dialogRef = this.dialog.open(DetalhadaComponent, {}
-      
-      );
-    
+  editarPublicacao(id: string): void {
+    const dialogRef = this.dialog.open(CadastroComponent, {});
+    dialogRef.componentInstance.id = id;
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      
+      this.exibirTodasPublicacoes();
     });
   }
 
+  mostrarDetalhes(id: string): void {
+    const dialogRef = this.dialog.open(DetalhadaComponent, {});
+    dialogRef.componentInstance.id = id;
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.exibirTodasPublicacoes();
+    });
+  }
 
   aplicaFiltro(valorDigitadoInput: any) {
-    let conteudoDigitado = valorDigitadoInput.target.value; 
-    
-    
+    let conteudoDigitado = valorDigitadoInput.target.value;
+
     if (conteudoDigitado) {
-      this.busca = conteudoDigitado;
-      this.filtro();     
+      this.buscarNome = conteudoDigitado;
+      this.filtro();
     }
-    else {
+    else
       this.exibirTodasPublicacoes();
-    }
-    if(conteudoDigitado.length == 0){      
-      this.busca = '';      
-    }   
+
+    if (conteudoDigitado.length == 0) 
+      this.buscarNome = '';
   }
 
   private filtro() {
-    let arrayPublicacao = [];
-    
-    for (let i = 0; i < this.publicacoes.length; i++) {
-      if (this.publicacoes[i].title.includes(this.busca)){
-        arrayPublicacao.push(this.publicacoes[i])
-      }
-      if(this.publicacoes[i].description.includes(this.busca)){
-        arrayPublicacao.push(this.publicacoes[i])
-      }      
-      
-    }      
-    if (arrayPublicacao) {
-      this.publicacoesFiltrado = arrayPublicacao;
-      this.exibirTodasPublicacoes
-    }
+    if (this.buscarNome.length < 1) return;
+    this.buscarNome = this.buscarNome.toLowerCase();
 
-          
+    this.publicacoesFiltrado = this.publicacoes.filter((publicacao: Publicacao) => {
+      if (!isNaN(Number(this.buscarNome)))
+        return publicacao.price == Number(this.buscarNome);
+      else
+        return publicacao.title.toLowerCase().includes(this.buscarNome) || publicacao.description.toLowerCase().includes(this.buscarNome)
+    });
   }
 
   exibirTodasPublicacoes() {
     this.service.todasPublicacoes().subscribe((publicacoes: Publicacao[]) => {
       this.publicacoes = publicacoes;
       this.publicacoesFiltrado = publicacoes;
-      
-    })    
-   
+    })
   }
 
   deletarPublicacao(id: string) {
-    this.service.deletarPublicacao(id).subscribe((publicacoes: Publicacao) => {
-      this.exibirTodasPublicacoes();      
-    })   
-    
-  }
-
-  detalhesPublicacao(id:string){
-    this.service.detalhesPublicacao(id).subscribe ((publicacoes: Publicacao) => {
-      this.router.navigateByUrl(`detalhada`)
-      this.service.publicacaoUnica(id)      
+    this.service.deletarPublicacao(id).subscribe(() => {
+      this.exibirTodasPublicacoes();
     })
-  } 
- 
+  }
 }

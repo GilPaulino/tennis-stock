@@ -12,23 +12,18 @@ import { PublicacaoService } from '../services/publicacao.service';
 })
 export class CadastroComponent implements OnInit, AfterViewInit {
 
-  
+
   @Output() aoPostar = new EventEmitter<any>();
   publicacoes = {} as Publicacao;
   nomeArquivo: string = '';
-  id: string | null;
-  imageBase64: string = '';
-  title: string = '';
-  description: string = '';
-  price: number = 0;
+  id: string = '';
 
   constructor(
     public dialogRef: MatDialogRef<CadastroComponent>,
     private service: PublicacaoService,
     private router: Router,
-    route: ActivatedRoute) { 
-      this.id = route.snapshot.paramMap.get('id');
-    }
+    route: ActivatedRoute) {
+  }
   ngAfterViewInit(): void {
   }
 
@@ -40,65 +35,57 @@ export class CadastroComponent implements OnInit, AfterViewInit {
     this.dialogRef.close();
   }
 
-  public definePublicacao(publicacao: Publicacao):void {
+  public definePublicacao(publicacao: Publicacao): void {
     this.publicacoes = publicacao;
-    
+
   }
-  
+
   public exibirPublicacaoUnica(): void {
-    if(!this.id){
+    if (!this.id) {
       this.publicacoes.id = 0
       return;
-    }     
-    this.service.publicacaoUnica(this.id).subscribe((publicacoes: Publicacao) =>{
-      
+    }
+    this.service.publicacaoUnica(this.id).subscribe((publicacoes: Publicacao) => {
+
       this.definePublicacao(publicacoes);
-  })
+    })
   }
 
   public async mudancaFormatoImg(mudanca: any): Promise<void> {
-    let fileTOUpload = <File>mudanca.target.files[0];    
+    let fileTOUpload = <File>mudanca.target.files[0];
     this.publicacoes.imageBase64 = await this.analisaBase64(fileTOUpload);
-        
   }
 
   public async analisaBase64(file: any): Promise<any> {
     return new Promise((resolve, reject) => {
       let leitor = new FileReader();
-
-      leitor.onload = () => {resolve(leitor.result)};
-
+      leitor.onload = () => { resolve(leitor.result) };
       leitor.onerror = reject;
-
       leitor.readAsDataURL(file);
-
-      this.nomeArquivo = file.name;       
-      
-    })    
-    
+      this.nomeArquivo = file.name;
+    })
   }
 
-  postar() {    
-    this.service.cadastrarOuAlterar(this.publicacoes).subscribe(resultado => {
+  postar() {
+    this.service.cadastrarOuAlterar(this.publicacoes).subscribe(() =>{
       console.log(this.publicacoes)
-      this.exibirPublicacaoUnica();
-      this.fecharDialog()      
+      this.fecharDialog()
     },
       (error) => console.error(error)
     )
 
   }
 
-  limparImagem(){
+  limparImagem() {
     this.publicacoes.imageBase64 = '';
-    
+
   }
 
-  limparCampos(){
+  limparCampos() {
     this.publicacoes.title = '';
     this.publicacoes.description = '';
     this.publicacoes.imageBase64 = '';
-    
-  } 
+
+  }
 
 }

@@ -18,6 +18,8 @@ $gray-700: #0B1B2B;
 $gray-800: #071422;
 $gray-900: #040F1A;
 
+
+
 .body {
     display: flex;
     width: 100%;
@@ -25,12 +27,12 @@ $gray-900: #040F1A;
     text-align: center;
     align-items: center;
     background-image: linear-gradient(to bottom, $gray-700 22%, $gray-900 20% );
-    padding: 0px;
-    overflow: hidden;
+    padding: 0px;    
     position: absolute;
+    overflow: hidden;
 
     .header {
-        width: 1366px;
+        width: 100%;
         height: 160px;            
         display: flex;
         position: absolute;
@@ -64,7 +66,7 @@ $gray-900: #040F1A;
         }
 
         .estoque {
-            margin-left: 1370px;
+            margin-left: auto;
             width: 68px;
             height: 29px;
             display: flex;
@@ -149,10 +151,4 @@ $gray-900: #040F1A;
             
         }
     }   
-}
-
-mat-progress-bar{
-    position: absolute;
-    top: 50%;
-    width: 400px;
 }

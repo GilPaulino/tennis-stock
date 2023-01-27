@@ -2,52 +2,35 @@
 
     <div class="containerEstoque">
 
-
         <mat-form-field appearance="outline" class="barraPesquisa">
             <input matInput (keyup)="aplicaFiltro($event)" placeholder="Buscar produto" />
-
         </mat-form-field>
 
-
-
-        <h2 class="cadastrar" (click)="cadastrarProduto()">  + Cadastrar Produto  </h2>
-
+        <h2 class="cadastrar" (click)="cadastrarProduto()"> + Cadastrar Produto </h2>
 
         <div class="resultadoFiltro">
-
             <h3 class="h3Produtos">Produtos</h3>
-            <p class="resultadoNome" *ngIf="busca">resultados para ' {{busca}} ' </p>
+            <p class="resultadoNome" *ngIf="buscarNome">resultados para ' {{buscarNome}} ' </p>
             <p class="quantidade"> {{publicacoesFiltrado.length}} Produtos</p>
         </div>
 
         <div class="listaResultado" *ngIf="!!publicacoes">
-
-
             <div class="resultado" *ngFor="let publicacao of publicacoesFiltrado">
-
-                <div class="imagemTenis" >
-                    <img (click)="mostrarDetalhes()" src="{{publicacao?.imageBase64}}" alt="Modelo do tênis">
+                <div class="imagemTenis">
+                    <img (click)="mostrarDetalhes(publicacao.id)" src="{{publicacao?.imageBase64}}"
+                        alt="Modelo do tênis">
                 </div>
                 <div class="containerTituloDescricaPreco">
-
-                    <h3 class="titulo" (click)="mostrarDetalhes()" > {{publicacao?.title}} </h3>
-
+                    <h3 class="titulo" (click)="mostrarDetalhes(publicacao.id)"> {{publicacao?.title}} </h3>
                     <p class="valor"> {{publicacao?.price | currency}} </p>
-
-                    <p class="descricaoTenis" (click)="mostrarDetalhes()"> {{publicacao?.description}} </p>
+                    <p class="descricaoTenis" (click)="mostrarDetalhes(publicacao.id)"> {{publicacao?.description}} </p>
                 </div>
 
                 <div class="editorLixeira">
-
-                    <i class="fa-solid fa-pen-to-square" (click)="cadastrarProduto()"></i>
-
+                    <i class="fa-solid fa-pen-to-square" (click)="editarPublicacao(publicacao.id)"></i>
                     <i class="fa-solid fa-trash-can" (click)="deletarPublicacao(publicacao.id)"></i>
                 </div>
             </div>
-
-
         </div>
     </div>
-
-
 </div>
