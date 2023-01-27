@@ -47,7 +47,4 @@ export class PublicacaoService {
     return this.httpClient.delete<Publicacao>(`${this.url}/${id}`);
   }
 
-  detalhesPublicacao(id: string): Observable<Publicacao> {
-    return this.httpClient.get<Publicacao>(`${this.url}/${id}`)
-  }
 }

@@ -6,4 +6,3 @@ export interface Publicacao {
     price: number;
     imageBase64: string;
 }
-

@@ -120,7 +120,7 @@ main .recebeImagem .containerNuvem .nuvem {
 }
 main .recebeImagem .containerNuvem .complementoNuvem {
   position: relative;
-  top: -78.6%;
+  top: -78.4%;
   left: 45%;
 }
 main .recebeImagem .containerNuvem .circulo {
@@ -151,14 +151,15 @@ main .recebeImagem h6 {
   text-align: center;
   color: #E7EDF4;
   position: relative;
+  left: 2%;
   flex: none;
   order: 0;
   flex-grow: 0;
   white-space: nowrap;
 }
 main .recebeImagem h6 .escolha {
-  margin-left: 4px;
-  margin-top: 2.6%;
+  margin-left: 0px;
+  margin-top: 2.9%;
   color: #5E60CE;
   cursor: pointer;
   width: 120px;
@@ -172,6 +173,7 @@ main .recebeImagem p {
   font-size: 12px;
   line-height: 18px;
   position: relative;
+  left: 27%;
   display: flex;
   align-items: center;
   text-align: center;
@@ -180,7 +182,6 @@ main .recebeImagem p {
   order: 0;
   flex-grow: 0;
   white-space: nowrap;
-  left: 23%;
 }
 main .recebeImagem input {
   display: none;

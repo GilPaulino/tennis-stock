@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Publicacao } from '../models/publicacao.model';
 import { PublicacaoService } from '../services/publicacao.service';
@@ -36,7 +36,7 @@ export class DetalhadaComponent implements OnInit {
       this.publicacoes.id = 0
       return
     }
-    this.service.publicacaoUnica(this.id).subscribe((publicacoes: Publicacao) => {
+    this.service.publicacaoUnica(this.id).subscribe((publicacoes: Publicacao) => {      
       this.definePublicacao(publicacoes);
     })
   }

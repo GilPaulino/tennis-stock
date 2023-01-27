@@ -22,12 +22,22 @@ $gray-900: #040F1A;
 .pagina{
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(to bottom, $gray-700, $gray-400 );
+    background-image: linear-gradient(180deg, $gray-800 30%, $gray-500, $gray-800 80%);
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;    
-    .container{    
+    align-items: center;   
+    .containerEfeitoImagem {
+        position: absolute;
+        width: 1300px;
+        height: 200px;
+        left: 280px;
+        top: 240px;
+        background: $gray-400;
+        filter: blur(100px);
+    }
+    .container{
+          
         .circulo{
             box-sizing: border-box;
             position: absolute;
@@ -55,11 +65,8 @@ $gray-900: #040F1A;
                 color: white;
             }
             p{                
-                position: absolute;
-                right: 75.18%;
-                top: 53.12%;
-                bottom: 43.62%;
-                left: 18%;                
+                position: absolute;                
+                left: 18.2%;                
                 font-family: 'Nunito';
                 font-style: normal;
                 font-weight: 300;
@@ -68,6 +75,7 @@ $gray-900: #040F1A;
                 display: flex;
                 align-items: flex-end;
                 color: white;
+                white-space: nowrap;
             }            
         }
         .container-login{            
@@ -107,7 +115,7 @@ $gray-900: #040F1A;
                 margin-bottom: 50px;
             }
             .label-input{
-                margin-left: 8%;                
+                margin-left: 8.7%;                
                 width: 315px;
                 height: 26px;
                 font-family: 'Nunito';
@@ -115,7 +123,7 @@ $gray-900: #040F1A;
                 font-weight: 700;
                 font-size: 16px;
                 line-height: 160%;
-                color: $text-color;
+                color: $text-color;                
                 flex: none;
                 order: 0;
                 flex-grow: 0;
@@ -132,6 +140,8 @@ $gray-900: #040F1A;
                 color: $text-color;
                 width: 315px;
                 height: 50px;
+                position: relative;
+                left: 1.5%;
                 background: $gray-900;
                 border: 1px solid $gray-900;
                 border-radius: 4px;
@@ -144,9 +154,10 @@ $gray-900: #040F1A;
                 }
             }
             .botao{  
-                margin-left: 7%;
-                margin-top: 65px;  
+                margin-left: 8.7%;
+                margin-top: 45px;  
                 :hover{
+                    transition-duration: 1s;
                     background: $primary-100;
                     border: $primary-100;
                 }   

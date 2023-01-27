@@ -260,8 +260,6 @@ $gray-900: #040F1A;
                 width: 900px;
                 height: 150px;                
                 position: relative;
-                
-                
 
                 .titulo {
                 width: 100px;                    
@@ -338,6 +336,7 @@ $gray-900: #040F1A;
                     order: 1;
                     align-self: stretch;
                     flex-grow: 1;
+                    cursor: pointer;
                     
                 }
             }

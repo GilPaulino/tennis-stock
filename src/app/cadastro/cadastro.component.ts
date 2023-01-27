@@ -1,7 +1,6 @@
 
 import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
-import { ActivatedRoute, Router } from '@angular/router';
 import { Publicacao } from '../models/publicacao.model';
 import { PublicacaoService } from '../services/publicacao.service';
 
@@ -10,23 +9,15 @@ import { PublicacaoService } from '../services/publicacao.service';
   templateUrl: './cadastro.component.html',
   styleUrls: ['./cadastro.component.scss']
 })
-export class CadastroComponent implements OnInit, AfterViewInit {
-
-
-  @Output() aoPostar = new EventEmitter<any>();
+export class CadastroComponent implements OnInit {
   publicacoes = {} as Publicacao;
   nomeArquivo: string = '';
   id: string = '';
 
   constructor(
     public dialogRef: MatDialogRef<CadastroComponent>,
-    private service: PublicacaoService,
-    private router: Router,
-    route: ActivatedRoute) {
-  }
-  ngAfterViewInit(): void {
-  }
-
+    private service: PublicacaoService) {}
+  
   ngOnInit(): void {
     this.exibirPublicacaoUnica();
   }
@@ -37,7 +28,6 @@ export class CadastroComponent implements OnInit, AfterViewInit {
 
   public definePublicacao(publicacao: Publicacao): void {
     this.publicacoes = publicacao;
-
   }
 
   public exibirPublicacaoUnica(): void {
@@ -50,7 +40,7 @@ export class CadastroComponent implements OnInit, AfterViewInit {
       this.definePublicacao(publicacoes);
     })
   }
-
+// **
   public async mudancaFormatoImg(mudanca: any): Promise<void> {
     let fileTOUpload = <File>mudanca.target.files[0];
     this.publicacoes.imageBase64 = await this.analisaBase64(fileTOUpload);
@@ -65,8 +55,8 @@ export class CadastroComponent implements OnInit, AfterViewInit {
       this.nomeArquivo = file.name;
     })
   }
-
-  postar() {
+// **
+  postar(): void {
     this.service.cadastrarOuAlterar(this.publicacoes).subscribe(() =>{
       console.log(this.publicacoes)
       this.fecharDialog()
@@ -76,15 +66,16 @@ export class CadastroComponent implements OnInit, AfterViewInit {
 
   }
 
-  limparImagem() {
+  limparImagem(): void {
     this.publicacoes.imageBase64 = '';
 
   }
 
-  limparCampos() {
+  limparCampos(): void {
     this.publicacoes.title = '';
     this.publicacoes.description = '';
-    this.publicacoes.imageBase64 = '';
+    this.publicacoes.price = 0;
+    this.limparImagem();
 
   }
 

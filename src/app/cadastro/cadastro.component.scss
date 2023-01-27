@@ -18,14 +18,13 @@ $gray-700: #0B1B2B;
 $gray-800: #071422;
 $gray-900: #040F1A;
 
-
 main{
     width: 1096px;
     height: 587px;
     display: flex;    
     position: relative;        
     flex-direction: column;
-    justify-content: center;
+    justify-content: center;    
     align-items: center;
     padding: 0px;    
     overflow: hidden;
@@ -36,7 +35,9 @@ main{
         font-weight: 700;
         font-size: 24px;
         line-height: 160%;
+        
         position: absolute;
+        
         width: 250px;
         left: 3%;       
         white-space: nowrap;
@@ -145,7 +146,7 @@ main{
             }
             .complementoNuvem{
                 position: relative;
-                top: -78.6%;
+                top: -78.40%;
                 left: 45%;
             }
             .circulo{
@@ -177,17 +178,20 @@ main{
             text-align: center;
             color: $text-color;
             position: relative;
-            
+            left: 2%;
             flex: none;
             order: 0;
             flex-grow: 0;
             white-space: nowrap;
             .escolha{
-                margin-left: 4px;
-                margin-top: 2.6%;
+                margin-left: 0px;
+                margin-top: 2.9%;
                 color: $secondary-500;                   
                 cursor: pointer;
-                width: 120px;                             
+                width: 120px; 
+                :hover{
+
+                }                            
             }
         }
 
@@ -200,6 +204,7 @@ main{
             font-size: 12px;
             line-height: 18px;
             position: relative;
+            left: 27%;     
             display: flex;
             align-items: center;
             text-align: center;
@@ -208,7 +213,6 @@ main{
             order: 0;
             flex-grow: 0;
             white-space: nowrap;
-            left: 23%;                
         }
         
         input{

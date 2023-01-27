@@ -6,11 +6,11 @@
   align-items: center;
   background-image: linear-gradient(to bottom, #0B1B2B 22%, #040F1A 20%);
   padding: 0px;
-  overflow: hidden;
   position: absolute;
+  overflow: hidden;
 }
 .body .header {
-  width: 1366px;
+  width: 100%;
   height: 160px;
   display: flex;
   position: absolute;
@@ -43,7 +43,7 @@
           text-decoration-color: #3294F8;
 }
 .body .header .estoque {
-  margin-left: 1370px;
+  margin-left: auto;
   width: 68px;
   height: 29px;
   display: flex;
@@ -125,10 +125,4 @@
   text-underline-position: under;
   -webkit-text-decoration-color: #3294F8;
           text-decoration-color: #3294F8;
-}
-
-mat-progress-bar {
-  position: absolute;
-  top: 50%;
-  width: 400px;
 }/*# sourceMappingURL=app.component.css.map */

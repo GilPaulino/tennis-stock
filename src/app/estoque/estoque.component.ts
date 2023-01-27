@@ -67,7 +67,7 @@ export class EstoqueComponent implements OnInit {
   }
 
   private filtro() {
-    if (this.buscarNome.length < 1) return;
+    if (this.buscarNome.length < 2) return;
     this.buscarNome = this.buscarNome.toLowerCase();
 
     this.publicacoesFiltrado = this.publicacoes.filter((publicacao: Publicacao) => {

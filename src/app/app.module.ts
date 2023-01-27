@@ -15,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatDialogModule} from '@angular/material/dialog';
+import { LoginModule } from './login/login.module';
 
 
 
@@ -32,7 +33,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
-    MatProgressBarModule,  
+    MatProgressBarModule,
+    LoginModule, 
     CadastroModule,
     EstoqueModule,            
     BrowserAnimationsModule,
