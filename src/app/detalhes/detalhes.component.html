@@ -1,0 +1,30 @@
+<main>
+    <div mat-dialog-content class="containerVisualizador" >
+        <div>
+            <div mat-dialog-actions class="containerBotao">
+                <button mat-button (click)="fecharDialog()"><i class="fa-solid fa-less-than"></i>Voltar </button>
+            </div>
+
+            <div class="containerEfeitoImagem"></div>
+
+            <div class="imagem" >
+                <img src="{{produtos.imageBase64}}" alt="Modelo Do tênis">
+            </div>
+
+            <h1 class="tituloProduto"> {{produtos.title}} </h1>
+
+            <div class="avaliacao">
+                <p><i class="fa-solid fa-star"></i></p>
+                <p><i class="fa-solid fa-star"></i></p>
+                <p><i class="fa-solid fa-star"></i></p>
+                <p><i class="fa-solid fa-star"></i></p>
+                <p><i class="fa-solid fa-star"></i></p>
+                <p class="pontosAvaliacao">4.3</p>
+            </div>
+
+            <h2 class="precoProduto"> {{produtos.price | currency}}</h2>
+
+            <p class="descricaoProduto"> {{produtos.description}} </p>
+        </div>
+    </div>
+</main>

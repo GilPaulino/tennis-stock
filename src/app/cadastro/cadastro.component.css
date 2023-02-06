@@ -104,7 +104,7 @@ main .recebeImagem .containerMensagem {
   position: relative;
   left: -3%;
 }
-main .recebeImagem .containerNuvem {
+main .recebeImagem .containerNuvemDeEnvio {
   display: block;
   position: relative;
   width: 70px;
@@ -114,31 +114,31 @@ main .recebeImagem .containerNuvem {
   top: -15%;
   cursor: pointer;
 }
-main .recebeImagem .containerNuvem .nuvem {
+main .recebeImagem .containerNuvemDeEnvio .nuvem {
   position: relative;
   top: 15.9%;
 }
-main .recebeImagem .containerNuvem .complementoNuvem {
+main .recebeImagem .containerNuvemDeEnvio .complementoNuvem {
   position: relative;
   top: -78.4%;
   left: 45%;
 }
-main .recebeImagem .containerNuvem .circulo {
+main .recebeImagem .containerNuvemDeEnvio .circulo {
   position: relative;
   left: 4%;
   top: -22%;
 }
-main .recebeImagem .containerNuvem .vertical {
+main .recebeImagem .containerNuvemDeEnvio .vertical {
   position: relative;
   top: -33%;
   left: -24.6%;
 }
-main .recebeImagem .containerNuvem .seta {
+main .recebeImagem .containerNuvemDeEnvio .seta {
   position: relative;
   top: -50%;
   left: -34.7%;
 }
-main .recebeImagem h6 {
+main .recebeImagem .arrasteSolte {
   width: 381px;
   height: 24px;
   font-family: "Nunito";
@@ -157,12 +157,20 @@ main .recebeImagem h6 {
   flex-grow: 0;
   white-space: nowrap;
 }
-main .recebeImagem h6 .escolha {
-  margin-left: 0px;
-  margin-top: 2.9%;
+main .recebeImagem .arrasteSolte .escolhaDeArquivo {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  margin-left: 3px;
+  margin-top: 3%;
   color: #5E60CE;
   cursor: pointer;
   width: 120px;
+}
+main .recebeImagem .arrasteSolte .escolhaDeArquivo:hover {
+  text-decoration: underline;
 }
 main .recebeImagem p {
   width: 179px;
@@ -186,12 +194,12 @@ main .recebeImagem p {
 main .recebeImagem input {
   display: none;
 }
-main .recebeImagem .posEnvio {
+main .recebeImagem .containerPosEnvio {
   display: flex;
   position: relative;
   top: -6%;
 }
-main .recebeImagem .posEnvio span {
+main .recebeImagem .containerPosEnvio span {
   display: flex;
   position: relative;
   left: 15.6%;
@@ -199,14 +207,14 @@ main .recebeImagem .posEnvio span {
   width: 200px;
   height: 200px;
 }
-main .recebeImagem .posEnvio span img {
+main .recebeImagem .containerPosEnvio span img {
   position: relative;
   width: 200px;
   height: 200px;
   left: 20%;
   top: 2%;
 }
-main .recebeImagem .posEnvio p {
+main .recebeImagem .containerPosEnvio p {
   font-family: "Nunito";
   font-style: normal;
   font-weight: 400;
@@ -216,7 +224,7 @@ main .recebeImagem .posEnvio p {
   top: 98%;
   left: -60%;
 }
-main .recebeImagem .posEnvio .lixeira {
+main .recebeImagem .containerPosEnvio .lixeira {
   position: relative;
   display: flex;
   left: 5%;
@@ -254,7 +262,7 @@ main .titulo {
   align-self: stretch;
   flex-grow: 0;
 }
-main .containerTitulo {
+main .containerInputTitulo {
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -272,7 +280,7 @@ main .containerTitulo {
   margin-left: 69.4%;
   margin-top: -55.6%;
 }
-main .containerTitulo input {
+main .containerInputTitulo input {
   width: 360px;
   height: 26px;
   font-family: "Nunito";
@@ -306,7 +314,7 @@ main .descricao {
   left: 70%;
   top: 15px;
 }
-main .containerDescricao {
+main .containerInputDescricao {
   position: relative;
   display: flex;
   gap: 4px;
@@ -322,7 +330,7 @@ main .containerDescricao {
   left: 59.9%;
   top: 45%;
 }
-main .containerDescricao textarea {
+main .containerInputDescricao textarea {
   display: flex;
   position: relative;
   width: 390px;
@@ -340,19 +348,19 @@ main .containerDescricao textarea {
   margin-left: -8px;
   overflow: auto;
 }
-main .containerDescricao textarea:focus {
+main .containerInputDescricao textarea:focus {
   outline: none;
 }
-main .containerDescricao textarea::-webkit-scrollbar {
+main .containerInputDescricao textarea::-webkit-scrollbar {
   background-color: #1C2F41;
   width: 12px;
   border-radius: 10px;
 }
-main .containerDescricao textarea::-webkit-scrollbar-thumb {
+main .containerInputDescricao textarea::-webkit-scrollbar-thumb {
   background: #112131;
   border-radius: 10px;
 }
-main .containerDescricao mat-hint {
+main .containerInputDescricao mat-hint {
   font-family: "Nunito";
   font-style: normal;
   font-weight: 400;
@@ -379,7 +387,7 @@ main .preco {
   top: 69.8%;
   left: 60%;
 }
-main .labelPreco {
+main .containerInputPreco {
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -399,28 +407,28 @@ main .labelPreco {
   left: 59.9%;
   top: 74.8%;
 }
-main .labelPreco ::-moz-placeholder {
+main .containerInputPreco ::-moz-placeholder {
   color: #E7EDF4;
 }
-main .labelPreco :-ms-input-placeholder {
+main .containerInputPreco :-ms-input-placeholder {
   color: #E7EDF4;
 }
-main .labelPreco ::placeholder {
+main .containerInputPreco ::placeholder {
   color: #E7EDF4;
 }
-main .labelPreco input {
+main .containerInputPreco input {
   position: relative;
   margin-top: 2px;
   color: #E7EDF4;
 }
-main .labelPreco input:focus {
+main .containerInputPreco input:focus {
   outline: none;
 }
-main .labelPreco input::-webkit-inner-spin-button {
+main .containerInputPreco input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-main .labelPreco span {
+main .containerInputPreco span {
   position: relative;
   display: flex;
 }

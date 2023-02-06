@@ -71,6 +71,12 @@ main{
                 margin: 0;
             }
         }
+
+        .containerBotao{
+            position: absolute;
+            left: 8%;
+            top: 18%;
+        }
         button{
             width: 84px;
             height: 22px;
@@ -85,10 +91,7 @@ main{
             border: none;
             flex: none;
             order: 1;
-            flex-grow: 0;
-            position: relative;
-            left: 150%;
-            top: 16%;
+            flex-grow: 0;            
             cursor: pointer;
             white-space: nowrap;
             letter-spacing: 1px;
@@ -103,12 +106,10 @@ main{
             }
             &:focus{
                 outline: none;
-            }
-
-                        
+            }                        
         }
 
-        h1 {
+        .tituloProduto {
             width: 245px;
             height: 64px;
             font-family: 'Nunito';
@@ -119,11 +120,11 @@ main{
             display: flex;
             align-items: center;
             color: $text-color;
-            position: relative;
+            position: absolute;
             flex: none;
             order: 0;
             flex-grow: 0;
-            left: 47.8%;
+            left: 54.8%;
             top: 25%;
             white-space: nowrap;
         }
@@ -134,7 +135,7 @@ main{
             justify-content: center;
             position: absolute;
             top: 35%;
-            left: 56%;
+            left: 55.8%;
 
             p {
                 width: 20px;
@@ -143,9 +144,8 @@ main{
                 cursor: pointer;
                 color: yellow;
             }
-            
-                    
-            .pontos {
+                                
+            .pontosAvaliacao {
                 width: 32px;
                 height: 26px;
                 font-family: 'Nunito';
@@ -164,7 +164,7 @@ main{
             }
         }
 
-        h2 {
+        .precoProduto {
             width: 99px;
             height: 31px;
             font-family: 'Nunito';
@@ -181,7 +181,7 @@ main{
             top: 40%;
             left: 54.6%;
         }
-        .descricao {
+        .descricaoProduto {
             width: 417px;
             height: 208px;
             font-family: 'Nunito';
@@ -190,16 +190,16 @@ main{
             font-size: 16px;
             line-height: 160%;
             display: flex;
-            align-items: center;
+            justify-content: flex-start;
             text-align: justify;
             color: $gray-200;
             flex: none;
             order: 3;
             align-self: stretch;
             flex-grow: 0;
-            position: relative;
-            left: 27.1%;
-            top: 49%;
+            position: absolute;
+            left: 55.2%;
+            top: 44%;
         }        
     }
 }

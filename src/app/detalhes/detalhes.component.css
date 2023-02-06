@@ -49,6 +49,11 @@ main .containerVisualizador .imagem img {
   justify-content: center;
   margin: 0;
 }
+main .containerVisualizador .containerBotao {
+  position: absolute;
+  left: 8%;
+  top: 18%;
+}
 main .containerVisualizador button {
   width: 84px;
   height: 22px;
@@ -64,9 +69,6 @@ main .containerVisualizador button {
   flex: none;
   order: 1;
   flex-grow: 0;
-  position: relative;
-  left: 150%;
-  top: 16%;
   cursor: pointer;
   white-space: nowrap;
   letter-spacing: 1px;
@@ -85,7 +87,7 @@ main .containerVisualizador button:hover {
 main .containerVisualizador button:focus {
   outline: none;
 }
-main .containerVisualizador h1 {
+main .containerVisualizador .tituloProduto {
   width: 245px;
   height: 64px;
   font-family: "Nunito";
@@ -96,11 +98,11 @@ main .containerVisualizador h1 {
   display: flex;
   align-items: center;
   color: #E7EDF4;
-  position: relative;
+  position: absolute;
   flex: none;
   order: 0;
   flex-grow: 0;
-  left: 47.8%;
+  left: 54.8%;
   top: 25%;
   white-space: nowrap;
 }
@@ -111,7 +113,7 @@ main .containerVisualizador .avaliacao {
   justify-content: center;
   position: absolute;
   top: 35%;
-  left: 56%;
+  left: 55.8%;
 }
 main .containerVisualizador .avaliacao p {
   width: 20px;
@@ -119,6 +121,9 @@ main .containerVisualizador .avaliacao p {
   margin-left: 2px;
   cursor: pointer;
   color: yellow;
+}
+main .containerVisualizador .avaliacao .estrelaCinco {
+  color: gray;
 }
 main .containerVisualizador .avaliacao .pontos {
   width: 32px;
@@ -137,7 +142,7 @@ main .containerVisualizador .avaliacao .pontos {
   flex-grow: 0;
   margin-left: 10px;
 }
-main .containerVisualizador h2 {
+main .containerVisualizador .precoProduto {
   width: 99px;
   height: 31px;
   font-family: "Nunito";
@@ -154,7 +159,7 @@ main .containerVisualizador h2 {
   top: 40%;
   left: 54.6%;
 }
-main .containerVisualizador .descricao {
+main .containerVisualizador .descricaoProduto {
   width: 417px;
   height: 208px;
   font-family: "Nunito";
@@ -170,7 +175,7 @@ main .containerVisualizador .descricao {
   order: 3;
   align-self: stretch;
   flex-grow: 0;
-  position: relative;
-  left: 27.1%;
-  top: 49%;
+  position: absolute;
+  left: 55.2%;
+  top: 34%;
 }/*# sourceMappingURL=detalhada.component.css.map */

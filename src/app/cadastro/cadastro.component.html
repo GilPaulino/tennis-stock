@@ -1,20 +1,18 @@
 <main>
     <h1 mat-dialog-title class="cabecalho"> Cadastrar Produto </h1>
-    <h1 class="fechar" (click)="fecharDialog()"> X </h1>
+    <h1 class="fecharDialog" (click)="fecharDialog()" > X </h1>    
 
-    <div mat-dialog-content class="dialog">
+    <div mat-dialog-content>
 
         <form (ngSubmit)="postar()">
 
-            <h6 class="enviar">Enviar Imagem</h6>
-            <p class="texto">O arquivo de imagem para o seu produto</p>
+            <h6 class="enviarImagem">Enviar Imagem</h6>
+            <p class="textoArquivoImagem">O arquivo de imagem para o seu produto</p>
+            
+                <label for="inputFile" class="containerEnvioImagem" tabindex="0">
 
-            <div class="enviarImagem">
-
-                <label for="inputFile" class="recebeImagem" tabindex="0">
-
-                    <div class="containerMensagem" *ngIf="!publicacoes.imageBase64">
-                        <div class="containerNuvem">
+                    <div class="containerMensagem" *ngIf="!produtos.imageBase64">
+                        <div class="containerNuvemDeEnvio">
                             <img class="nuvem" src="assets/img/enviaUm.svg" alt="Icone de Envio">
                             <img class="complementoNuvem" src="assets/img/enviaCinco.svg" alt="Icone de Envio">
                             <img class="circulo" src="assets/img/enviaDois.svg" alt="Icone de Envio">
@@ -22,76 +20,49 @@
                             <img class="seta" src="assets/img/enviaQuatro.svg" alt="Icone de Envio">
                         </div>
 
-                        <h6 class="arraste">Arraste e solte um arquivo aqui ou <h6 class="escolha"> Escolha Arquivo
-                            </h6>
-                        </h6>
+                        <h6 class="arrasteSolte">Arraste e solte um arquivo aqui ou <h6 class="escolhaArquivo"> Escolha Arquivo </h6> </h6>
                         <p>Formatos Suportados: JPEG, PNG</p>
-
-
                     </div>
 
-                    <input type="file" accept="image/*" name="imageBase64" (change)="mudancaFormatoImg($event)"
+                    <input type="file" accept="image/png,image/JPEG" name="imageBase64" (change)="mudancaFormatoImg($event)"
                         tabindex="0" id="inputFile">
 
-                    <div class="posEnvio" *ngIf="publicacoes.imageBase64">
+                    <div class="mensagemPosEnvio" *ngIf="produtos.imageBase64">
                         <span class="imagemCarregada">
-                            <img src="{{publicacoes.imageBase64}}" alt="">
+                            <img src="{{produtos.imageBase64}}" alt="Modelo Tenis">
                         </span>
+
+                        <p> {{nomeImagem}} </p>
 
                         <div class="lixeira">
                             <i class="fa-solid fa-trash-can" (click)="limparImagem()"></i>
                         </div>
-
-                        <p> {{nomeArquivo}} </p>
-
-                    </div>
-                    <div class="barraProgresso">
-                        <mat-progress-bar value="86"></mat-progress-bar>
-
                     </div>
 
-                </label>
-
-            </div>
-
-
-
+                </label>            
 
             <label class="titulo" for="">Título:</label>
 
-
-            <mat-form-field appearance="outline" class="containerTitulo">
-                <input matInput name="title" [(ngModel)]="publicacoes.title">
+            <mat-form-field appearance="outline" class="containerInputTitulo">
+                <input matInput name="title" [(ngModel)]="produtos.title">
             </mat-form-field>
-
-
 
             <label class="descricao" for="">Desrição:</label>
 
-
-            <mat-form-field class="example-full-width" class="containerDescricao" appearance="outline">
-                <textarea matInput name="description" [(ngModel)]="publicacoes.description"></textarea>
+            <mat-form-field class="example-full-width" class="containerInputDescricao" appearance="outline">
+                <textarea matInput name="description" [(ngModel)]="produtos.description"></textarea>
 
             </mat-form-field>
-
-
 
             <label class="preco" for="">Preço:</label>
 
-            <mat-form-field appearance="outline" floatLabel="always" class="labelPreco">
-
-                <input matInput type="number" name="price" value="0" [(ngModel)]="publicacoes.price">
+            <mat-form-field appearance="outline" floatLabel="always" class="containerInputPreco">
+                <input matInput type="number" name="price" value="0" [(ngModel)]="produtos.price">
                 <span matTextPrefix>R$&nbsp;</span>
-
             </mat-form-field>
 
-
-
             <h5 class="cancelar" (click)="limparCampos()">Cancelar</h5>
-
             <button type="submit" mat-button> <i class="fa-regular fa-floppy-disk"></i> Salvar</button>
-
         </form>
-
     </div>
 </main>

@@ -13,31 +13,32 @@
             <p>Gerencie seu estoque!</p>
         </div>
 
-        <div class="container-login">            
-
-            <h2>Login</h2>
-                        
-                <div class="container-usuario">
-            
+        <form action="">
+            <div class="containerLogin">
+        
+                <h2>Login</h2>
+                <div class="containerUsuario">
+        
                     <label class="label-input" for="nome">Nome de usuário:</label>
                     <input type="text" placeholder="Nome de usuário">
-            
+        
                 </div>
-                <div class="container-senha">
+                <div class="containerSenha">
                     <label class="label-input" for="senha">Senha:</label>
-                    <input type="password" placeholder="Digite sua senha">
-            
+                    <input type="password" placeholder="Digite sua senha">        
                 </div>
-            
-            <div class="botao">
+        
+                <div class="botao">        
+                    <button type="submit">
+                        <label class="label-botao" for="submit">Entrar</label>        
+                    </button>        
+                </div>
 
-                <button type="submit">
-                    <label class="label-botao"for="submit">Entrar</label>
-                    
-                </button>
-                
+                <div class="criarCadastro">
+                    <p (click)="registrarConta()">Criar Conta</p>
+                </div>
+
             </div>
-
-        </div>
+        </form>
     </div>
 </div>

@@ -1,0 +1,267 @@
+$primary-700: #14589C;
+$primary-500: #1E6F9F;
+$primary-300: #3294F8;
+$primary-100: #4EA8DE;
+
+$secondary-500: #5E60CE;
+$secondary-300: #8284FA;
+
+$text-color: #E7EDF4;
+
+$gray-100: #C4D4E3;
+$gray-200: #AFC2D4;
+$gray-300: #7B96B2;
+$gray-400: #3A536B;
+$gray-500: #1C2F41;
+$gray-600: #112131;
+$gray-700: #0B1B2B;
+$gray-800: #071422;
+$gray-900: #040F1A;
+
+main {
+    display: block;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 32px;
+    gap: 10px;
+    position: relative;
+    width: 400px;
+    height: 460px;
+    background: $gray-600;
+    box-shadow: 0px 40px 80px rgba(0, 0, 0, 0.25), inset 4px 4px 26px rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    
+
+    .registro {
+        width: 106px;
+        height: 49px;
+        font-family: 'Nunito';
+        font-style: normal;
+        font-weight: 800;
+        font-size: 36px;
+        line-height: 49px;
+        display: flex;
+        align-items: center;
+        margin-left: 23%;
+        color: white;
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+        white-space: nowrap;
+    }
+
+
+    .containerNome {
+        label {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 160%;
+            font-family: 'Nunito';
+            color: $text-color;
+            position: absolute;
+            left: 11%;
+            top: 23%;
+        }
+
+        .containerInputNome {
+            width: 360px;
+            height: 58.9px;
+            font-family: 'Nunito';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 160%;
+            color: $gray-200;
+            background: $gray-900;
+            flex: none;
+            order: 0;
+            flex-grow: 1;
+            border: none;
+            position: absolute;
+            left: 11%;
+            top: 29%;
+            ::placeholder{
+                color: $gray-400;
+            }          
+
+            input {
+                width: 357px;
+                height: 55px;
+                position: relative;                
+                margin-top: -15px;
+                margin-bottom: -11px;
+                font-family: 'Nunito';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 160%;
+                color: $gray-200;                
+                flex: none;
+                order: 0;
+                flex-grow: 1;
+                border: none;
+            }
+        }
+    }
+
+    .containerEmail {
+        label {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 160%;
+            font-family: 'Nunito';
+            color: $text-color;
+            position: absolute;
+            left: 11%;
+            top: 43%;
+        }
+
+        .containerInputEmail {
+            width: 360px;
+            height: 20px;
+            font-family: 'Nunito';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 160%;
+            color: $text-color;
+            flex: none;
+            order: 0;
+            flex-grow: 0;
+            position: absolute;
+            left: 11%;
+            top: 49%;
+            padding-top: 2px;
+            ::placeholder{
+                color: $gray-400;
+            } 
+
+            input {
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                padding: 12px;
+                gap: 4px;
+                color: $text-color;
+                width: 358.9px;
+                height: 55px;
+                position: absolute;
+                top: 0%;
+                left: -5%;
+                background: $gray-900;
+                border: 1px solid $gray-900;
+                border-radius: 4px;
+                flex: none;
+                order: 1;
+                align-self: stretch;
+                flex-grow: 0;
+            }
+        }
+    }
+
+    .containerSenha {
+        label {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 160%;
+            font-family: 'Nunito';
+            color: $text-color;
+            position: absolute;
+            left: 11%;
+            top: 61%;
+        }
+
+        .containerInputSenha {
+            width: 360px;
+            height: 20px;
+            font-family: 'Nunito';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 160%;
+            color: $text-color;
+            flex: none;
+            order: 0;
+            flex-grow: 0;
+            position: absolute;
+            left: 11%;
+            top: 68%;
+            padding-top: 2px;            
+        }
+
+        input {
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 12px;
+            gap: 4px;
+            color: $text-color;
+            width: 360px;
+            height: 55px;
+            position: absolute;
+            top: 0%;
+            left: -5%;
+            background: $gray-900;
+            border: 1px solid $gray-900;
+            border-radius: 4px;
+            flex: none;
+            order: 1;
+            align-self: stretch;
+            flex-grow: 0;
+            border: none;
+        }
+    }
+
+    .cadastrar {
+        position: absolute;
+        top: 85%;
+        left: 16%;
+
+        :hover {
+            transition-duration: 1s;
+            background: $primary-100;
+            border: $primary-100;
+        }
+
+        button {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 9px 20px;
+            gap: 8px;
+            width: 315px;
+            height: 44px;
+            background: $primary-500;
+            border-radius: 6px;
+            border: $primary-500;
+            flex: none;
+            order: 3;
+            align-self: stretch;
+            flex-grow: 0;
+
+            cursor: pointer;
+
+            .label-botao {
+                width: 47px;
+                height: 26px;
+                font-family: 'Nunito';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 160%;
+                color: $text-color;
+                flex: none;
+                order: 1;
+                flex-grow: 0;
+                cursor: pointer;
+            }
+        }
+    }
+}

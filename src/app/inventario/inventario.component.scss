@@ -20,16 +20,17 @@ $gray-900: #040F1A;
 
 
 
-.container {
+main {
     width: 100%;
     height: 587px;
-    display: flex;   
-    position: absolute;    
+    display: flex;
+    position: absolute;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 0px;
     top: 15.5%;
+
 }
 
 .containerEstoque {
@@ -45,14 +46,14 @@ $gray-900: #040F1A;
         gap: 4px;
         width: 1096px;
         height: 57px;
-        background: $gray-900;
+        background: $gray-800;
         border-radius: 4px;
         flex: none;
         order: 1;
         flex-grow: 0;
         margin-top: -60px;
-        margin-left: 26px;       
-        
+        margin-left: 26px;
+
 
         input {
             position: relative;
@@ -65,20 +66,21 @@ $gray-900: #040F1A;
             line-height: 160%;
             color: $text-color;
             flex: none;
-            background: $gray-900;
-            border: 1px $gray-500;
+            background: $gray-800;            
             order: 0;
             flex-grow: 1;
-            &::placeholder{
-               color: $gray-400;
+
+            &::placeholder {
+                color: $gray-400;
             }
+
             &:focus {
                 outline: none;
             }
         }
     }
 
-    .cadastrar {
+    .cadastrarProduto {
         display: flex;
         width: 180px;
         height: 22px;
@@ -102,20 +104,13 @@ $gray-900: #040F1A;
             text-decoration: underline;
             color: $primary-100;
         }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-
-            &:hover {
-                text-underline-position: under;
-                text-decoration-color: $primary-300;
-            }
+        &:active {
+            color: $primary-500;
         }
 
     }
 
-    .h3Produtos {
+    .txtProdutos {
         width: 80px;
         height: 29px;
         font-family: 'Nunito';
@@ -133,7 +128,7 @@ $gray-900: #040F1A;
         margin-left: 26.4px;
     }
 
-    .resultadoNome {
+    .resultadoPesquisa {
         width: 140px;
         height: 22px;
         font-family: 'Nunito';
@@ -153,7 +148,7 @@ $gray-900: #040F1A;
 
     }
 
-    .quantidade {
+    .quantidadeProdutos {
         width: 69px;
         height: 22px;
         font-family: 'Nunito';
@@ -171,10 +166,10 @@ $gray-900: #040F1A;
         white-space: nowrap;
         margin-left: 1044px;
         margin-top: -32px;
-        
+
     }
 
-    .listaResultado {
+    .listaProdutos {
         flex: none;
         order: 1;
         flex-grow: 0;
@@ -182,21 +177,19 @@ $gray-900: #040F1A;
         height: 450px;
         margin-bottom: -220px;
         overflow-y: auto;
-        overflow-x: hidden;        
-
+        overflow-x: hidden;
         &::-webkit-scrollbar {
             background-color: $gray-500;
             width: 12px;
             border-radius: 10px;
 
         }
-
         &::-webkit-scrollbar-thumb {
             background: $gray-600;
             border-radius: 10px;
         }
 
-        .resultado {
+        .produto {
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -214,27 +207,23 @@ $gray-900: #040F1A;
             order: 0;
             align-self: stretch;
             flex-grow: 0;
-            transition-duration: 0.5s;            
-            
+            transition-duration: 0.5s;
             &:hover {
-                
-                background: $gray-500;                
-                .containerTituloDescricaPreco{
+                background: $gray-500;
+                .containerTituloDescricaPreco {
                     position: relative;
                     width: 800px;
-                    .descricaoTenis{
+                    .descricaoProduto {
                         width: 780px;
                         position: relative;
-                        
-                } 
+                    }
                 }
-                          
-                .editorLixeira{
+                .editorLixeira {
                     display: flex;
                 }
-            }           
+            }
 
-            .imagemTenis {
+            .imagemProduto {
                 width: 100px;
                 height: 100px;
                 position: relative;
@@ -247,80 +236,58 @@ $gray-900: #040F1A;
                 order: 0;
                 flex-grow: 0;
                 cursor: pointer;
-                img{
+
+                img {
                     width: 125px;
                     position: relative;
                     left: 0%;
-                    top: -44%;                    
+                    top: -44%;
                 }
             }
-            
+
             .containerTituloDescricaPreco {
                 display: block;
                 width: 900px;
-                height: 150px;                
+                height: 150px;
                 position: relative;
 
-                .titulo {
-                width: 100px;                    
-                height: 32px;
-                font-family: 'Nunito';
-                font-style: normal;
-                position: relative;
-                font-weight: 700;
-                font-size: 20px;
-                line-height: 160%;
-                display: flex;
-                top: 2%;
-                left: 0.5%;
-                align-items: flex-end;
-                justify-content: flex-start;              
-                color: $text-color;                
-                flex: none;
-                order: 0;
-                flex-grow: 0;
-                white-space: nowrap;
-                cursor: pointer;                
+                .tituloProduto {
+                    width: 100px;
+                    height: 32px;
+                    font-family: 'Nunito';
+                    font-style: normal;
+                    position: relative;
+                    font-weight: 700;
+                    font-size: 20px;
+                    line-height: 160%;
+                    display: flex;
+                    top: 2%;
+                    left: 0.5%;
+                    align-items: flex-end;
+                    justify-content: flex-start;
+                    color: $text-color;
+                    flex: none;
+                    order: 0;
+                    flex-grow: 0;
+                    white-space: nowrap;
+                    cursor: pointer;
 
-                &:hover {
-                    text-decoration-line: underline;
-                }
-                a {
-                    color: inherit;
-                    text-decoration: none;
-        
                     &:hover {
-                        text-underline-position: under;
-                        text-decoration-color: inherit;
+                        text-decoration-line: underline;
+                    }
+
+                    a {
+                        color: inherit;
+                        text-decoration: none;
+
+                        &:hover {
+                            text-underline-position: under;
+                            text-decoration-color: inherit;
+                        }
                     }
                 }
-            }
-
-            .valor {
-                width: 100px;
-                height: 18px;
-                position: relative;
-                font-family: 'Nunito';
-                font-style: normal;
-                font-weight: 700;
-                font-size: 12px;
-                line-height: 130%;
-                display: flex;
-                padding: 0;
-                top: -24%;
-                left: 89%;
-                align-items: center;
-                text-align: right;
-                color: $secondary-300;
-                flex: none;
-                order: 1;
-                flex-grow: 1;
-                justify-content: flex-end;
                 
-                            
-            }
-
-                .descricaoTenis {
+                .descricaoProduto {
                     position: relative;
                     top: -25%;
                     left: 0.5%;
@@ -330,41 +297,70 @@ $gray-900: #040F1A;
                     font-style: normal;
                     font-weight: 400;
                     font-size: 16px;
-                    line-height: 160%; 
+                    line-height: 160%;
                     color: $gray-200;
                     flex: none;
                     order: 1;
                     align-self: stretch;
                     flex-grow: 1;
                     cursor: pointer;
-                    
                 }
+
+                .valorProduto {
+                    width: 100px;
+                    height: 18px;
+                    position: relative;
+                    font-family: 'Nunito';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 12px;
+                    line-height: 130%;
+                    display: flex;
+                    padding: 0;
+                    top: -24%;
+                    left: 89%;
+                    align-items: center;
+                    text-align: right;
+                    color: $secondary-300;
+                    flex: none;
+                    order: 1;
+                    flex-grow: 1;
+                    justify-content: flex-end;
+
+                }
+
             }
-            .editorLixeira{
+
+            .editorLixeira {
                 display: none;
                 flex-direction: row;
                 justify-content: flex-end;
-                align-items: center;                
+                align-items: center;
                 align-items: center;
                 text-align: center;
                 width: 90px;
                 height: 100px;
                 margin-bottom: -2.2%;
                 margin-left: -3%;
-                flex: none;                
-                flex-grow: 0;            
                 flex: none;
-                order: 1; 
-                
-                .fa-solid{
-                     position: relative;
-                     left: -14%;
-                     top: -11%;
-                     margin: 10px;
-                     color: $text-color;
-                     cursor: pointer;
+                flex-grow: 0;
+                flex: none;
+                order: 1;
+
+                .fa-solid {
+                    position: relative;
+                    left: -14%;
+                    top: -11%;
+                    margin: 10px;
+                    color: $text-color;
+                    cursor: pointer;
                 }
             }
         }
     }
+}
+
+.loading-spinner{
+    position: absolute;
+    display: flex;    
 }

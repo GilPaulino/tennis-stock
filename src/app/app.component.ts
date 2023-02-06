@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PublicacaoService } from './services/publicacao.service';
+import { ProdutoService } from './services/produto.service';
 
 
 @Component({
@@ -10,6 +10,6 @@ import { PublicacaoService } from './services/publicacao.service';
 export class AppComponent {
   title = 'gerenciador-de-estoque'; 
 
-  constructor(private service: PublicacaoService){}
+  constructor(private service: ProdutoService){}
  
 }

@@ -1,0 +1,35 @@
+<main class="container">
+    <div class="containerEstoque">
+        <mat-form-field appearance="outline" class="barraPesquisa">
+            <input matInput (keyup)="filtrar($event)" placeholder="Buscar produto" />
+        </mat-form-field>
+
+        <h2 class="cadastrarProduto" (click)="cadastrarProduto()"> + Cadastrar Produto </h2>
+
+        <div class="resultadoFiltro">
+            <h3 class="txtProdutos">Produtos</h3>
+            <p class="resultadoPesquisa" *ngIf="filtrarTituloDescricaoValor">resultados para ' {{filtrarTituloDescricaoValor}} ' </p>
+            <p class="quantidadeProdutos"> {{produtoFiltrado.length}} Produtos</p>
+        </div>
+
+        <div class="listaProdutos" *ngIf="produtos">
+            <div class="produto" *ngFor="let produto of produtoFiltrado">
+                <div class="imagemProduto">
+                    <img (click)="mostrarDetalhesProduto(produto)" src="{{produto?.imageBase64}}" alt="Modelo Tênis">
+                </div>
+
+                <div class="containerTituloDescricaPreco">
+                    <h3 class="tituloProduto" (click)="mostrarDetalhesProduto(produto)"> {{produto?.title}} </h3>
+                    <p class="valorProduto"> {{produto?.price | currency}} </p>
+                    <p class="descricaoProduto" (click)="mostrarDetalhesProduto(produto)"> {{produto?.description}} </p>
+                </div>
+
+                <div class="editorLixeira">
+                    <i class="fa-solid fa-pen-to-square" (click)="editarProduto(produto.id)"></i>
+                    <i class="fa-solid fa-trash-can" (click)="deletarProduto(produto.id)"></i>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>

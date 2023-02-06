@@ -1,0 +1,40 @@
+<main>
+
+    <form action="">
+        <div class="containerRegistro">
+
+            <h1 class="registro" mat-dialog-title>Registre-se</h1>
+
+            <div mat-dialog-content>
+
+                <div class="containerNome">
+                    <label for="">Nome de usuário:</label>
+                    <mat-form-field appearance="outline" class="containerInputNome">
+                        <input matInput name="nomeCompleto" tabindex="0" placeholder="Digite seu nome de usuário">
+                    </mat-form-field>
+                </div>
+
+                <div class="containerEmail">
+                    <label for="">E-mail:</label>
+                    <mat-form-field appearance="outline" class="containerInputEmail">
+                        <input matInput placeholder="exemplo@exemplo.com" required tabindex="0">
+                        <mat-error *ngIf="email.invalid"></mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="containerSenha">
+                    <label for="">Senha:</label>
+                    <mat-form-field appearance="outline" class="containerInputSenha">
+                        <input matInput type="password" required tabindex="0">
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="cadastrar" mat-dialog-actions>
+                <button type="submit">
+                    <label class="label-botao" for="submit">Cadastrar</label>
+                </button>
+            </div>
+        </div>
+    </form>
+</main>

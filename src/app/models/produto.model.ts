@@ -1,5 +1,5 @@
 
-export interface Publicacao {
+export interface Produto {
     id?: number | string;
     title: string;
     description: string;
