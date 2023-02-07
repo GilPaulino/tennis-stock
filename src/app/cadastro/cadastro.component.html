@@ -11,7 +11,7 @@
             
                 <label for="inputFile" class="containerEnvioImagem" tabindex="0">
 
-                    <div class="containerMensagem" *ngIf="!produtos.imageBase64">
+                    <div class="containerMensagem" *ngIf="!produto.imageBase64">
                         <div class="containerNuvemDeEnvio">
                             <img class="nuvem" src="assets/img/enviaUm.svg" alt="Icone de Envio">
                             <img class="complementoNuvem" src="assets/img/enviaCinco.svg" alt="Icone de Envio">
@@ -27,9 +27,9 @@
                     <input type="file" accept="image/png,image/JPEG" name="imageBase64" (change)="mudancaFormatoImg($event)"
                         tabindex="0" id="inputFile">
 
-                    <div class="mensagemPosEnvio" *ngIf="produtos.imageBase64">
+                    <div class="mensagemPosEnvio" *ngIf="produto.imageBase64">
                         <span class="imagemCarregada">
-                            <img src="{{produtos.imageBase64}}" alt="Modelo Tenis">
+                            <img src="{{produto.imageBase64}}" alt="Modelo Tenis">
                         </span>
 
                         <p> {{nomeImagem}} </p>
@@ -44,20 +44,20 @@
             <label class="titulo" for="">Título:</label>
 
             <mat-form-field appearance="outline" class="containerInputTitulo">
-                <input matInput name="title" [(ngModel)]="produtos.title">
+                <input matInput name="title" [(ngModel)]="produto.title">
             </mat-form-field>
 
             <label class="descricao" for="">Desrição:</label>
 
             <mat-form-field class="example-full-width" class="containerInputDescricao" appearance="outline">
-                <textarea matInput name="description" [(ngModel)]="produtos.description"></textarea>
+                <textarea matInput name="description" [(ngModel)]="produto.description"></textarea>
 
             </mat-form-field>
 
             <label class="preco" for="">Preço:</label>
 
             <mat-form-field appearance="outline" floatLabel="always" class="containerInputPreco">
-                <input matInput type="number" name="price" value="0" [(ngModel)]="produtos.price">
+                <input matInput type="number" name="price" value="0" [(ngModel)]="produto.price">
                 <span matTextPrefix>R$&nbsp;</span>
             </mat-form-field>
 

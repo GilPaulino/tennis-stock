@@ -10,8 +10,7 @@ import { ProdutoService } from '../services/produto.service';
   styleUrls: ['./cadastro.component.scss']
 })
 export class CadastroComponent implements OnInit {
-  produtos = {} as Produto;
-  id: string = '';
+  produto: Produto = {} as Produto;
   nomeImagem: string = '';
 
   constructor(
@@ -19,31 +18,31 @@ export class CadastroComponent implements OnInit {
     private service: ProdutoService) {}
   
   ngOnInit(): void {
-    this.pegarProdutoPorId();
+    // this.pegarProdutoPorId();
   }
 
   fecharDialog(): void {
     this.dialogRef.close();
   }
 
-  public defineProduto(produto: Produto): void {
-    this.produtos = produto;
-  }
+  // public defineProduto(produto: Produto): void {
+  //   this.produtos = produto;
+  // }
 
-  public pegarProdutoPorId(): void {
-    if (!this.id) {
-      this.produtos.id = 0
-      return;
-    }
-    this.service.pegarProdutoPorId(this.id).subscribe((produtos: Produto) => {
-      this.defineProduto(produtos);
-    })
-  }
+  // public pegarProdutoPorId(): void {
+  //   if (!this.id) {
+  //     this.produtos.id = 0
+  //     return;
+  //   }
+  //   this.service.pegarProdutoPorId(this.id).subscribe((produtos: Produto) => {
+  //     this.defineProduto(produtos);
+  //   })
+  // }
 
 // **
   public async mudancaFormatoImg(mudanca: any): Promise<void> {
     let fileTOUpload = <File>mudanca.target.files[0];
-    this.produtos.imageBase64 = await this.analisaBase64(fileTOUpload);
+    this.produto.imageBase64 = await this.analisaBase64(fileTOUpload);
     
   }
   
@@ -59,8 +58,8 @@ export class CadastroComponent implements OnInit {
 // **
 
   postar(): void {
-    this.service.adicionarOuEditarProduto(this.produtos).subscribe(() =>{
-      console.log(this.produtos)
+    console.log(this.produto)
+    this.service.adicionarOuEditarProduto(this.produto).subscribe(() =>{
       this.fecharDialog()
     },
       (error) => console.error(error)
@@ -68,13 +67,13 @@ export class CadastroComponent implements OnInit {
   }
 
   limparImagem(): void {
-    this.produtos.imageBase64 = '';
+    this.produto.imageBase64 = '';
   }
 
   limparCampos(): void {
-    this.produtos.title = '';
-    this.produtos.description = '';
-    this.produtos.price = 0;
+    this.produto.title = '';
+    this.produto.description = '';
+    this.produto.price = 0;
     this.limparImagem();
   }
 

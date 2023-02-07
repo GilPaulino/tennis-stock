@@ -38,8 +38,8 @@ export class ProdutoService {
   }
 
   adicionarOuEditarProduto(produto: Produto): Observable<Produto> {
-    return produto.id == 0 ? this.adicionarProduto(produto)
-                           : this.editarProduto(produto);
+    return produto.id  ? this.editarProduto(produto)
+                       : this.adicionarProduto(produto);
   }
 
   deletarProduto(id: string): Observable<Produto> {

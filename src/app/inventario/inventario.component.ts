@@ -35,9 +35,9 @@ export class InventarioComponent implements OnInit {
     });
   }
 
-  editarProduto(id: string): void {
+  editarProduto(produto: Produto): void {
     const dialogRef = this.dialog.open(CadastroComponent, {});
-    dialogRef.componentInstance.id = id;
+    dialogRef.componentInstance.produto = produto
 
     dialogRef.afterClosed().subscribe(result => {
       this.exibirProdutos();
